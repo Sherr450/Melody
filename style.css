@@ -1,0 +1,159 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#FFF0F5}
+header{background:#b93b8f;padding:15px 20px;display:flex;align-items:center;gap:15px;color:white;position:sticky;top:0;z-index:30}
+.sidebar{
+  background-color:#121212;
+}
+.btn-menu{font-size:26px;cursor:pointer;background:white;color:#f660ab;width:38px;height:38px;display:grid;place-items:center;border-radius:8px;user-select:none}
+.logo{font-size:24px;font-weight:bold;flex:1}
+.layout{display:block}
+.sidebar{
+  position:absolute;
+  top:68px;
+  left:20px;
+  width:220px;
+  background: #faafbe;
+  border-radius:0 0 15px 15px;
+  padding:0 15px;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transition: all .3s ease;
+  z-index:20;
+}
+#check-menu:checked ~ header + .layout .sidebar{
+  max-height:300px;
+  opacity:1;
+  padding:15px;
+}
+.sidebar h3{color:#f78fb6;font-size:12px;margin:15px 0 10px;letter-spacing:1px}
+.sidebar ul{list-style:none}
+.sidebar li{margin:6px 0}
+.sidebar a{text-decoration:none;color:#444;display:block;padding:12px 12px;border-radius:10px;background:#fdf2f5}
+.sidebar a:hover{background:#ffe6ef;color:#f78fb6}
+.contenido{padding:20px}
+.seccion{display:flex;gap:20px;flex-wrap:wrap;background:#1a1028;border-radius:20px;padding:20px;box-shadow:0 5px 20px rgba(0,0,0,.06);margin-bottom:20px}
+.player-card{width:340px;text-align:center}
+.player-card img{width:240px;height:240px;border-radius:15px;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,.15)}
+.player-card h2{margin:15px 0 5px;color:#b11a45}
+.player-card p{color:#f78fb6;margin-bottom:15px}
+.controles{display:flex;justify-content:center;align-items:center;gap:18px;margin:15px 0}
+.controles button{border:none;background:#fbe2ec;width:45px;height:45px;border-radius:50%;font-size:18px;cursor:pointer}
+.controles .play{background:#f78fb6;color:white;width:60px;height:60px;font-size:24px}
+.lista{flex:1;min-width:280px}
+.lista h3{color:#f78fb6;margin-bottom:15px}
+.item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;margin-bottom:10px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.item:hover{background:#fff0f5}
+.item img{width:50px;height:50px;border-radius:8px}
+.item div{flex:1}
+.item.activa{background:#ffe1ec;border:1px solid #f78fb6}
+.seccion-videos{background:#1a1028;border-radius:20px;padding:20px;box-shadow:0 5px 20px rgba(0,0,0,.06)}
+.seccion-videos h3{color:#f78fb6;margin-bottom:15px}
+.grid-videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:15px}
+.card-video{background:#fdf2f5;border-radius:15px;overflow:hidden}
+.card-video video{width:100%;height:160px;object-fit:cover}
+.card-video p{padding:10px 12px}
+@media(max-width:768px){
+  .seccion{flex-direction:column}
+  .player-card{width:100%}
+  .sidebar{left:10px;right:10px;width:auto}
+}
+.logo-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo-header img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+}
+.logo-header span {
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+/* ---- FONDO NEGRO SPOTIFY MORADO ---- */
+body{
+  background-color: #0f0a18 !important;
+}
+
+.layout{
+  background-color: #0f0a18 !important;
+  min-height: 100vh;
+}
+
+/* Tarjetas y reproductor en morado oscuro */
+.layout > div,
+div[style*="f06ff"],
+section{
+  background-color: #1a1028 !important;
+  color: #c97a8e !important;
+  border-radius: 12px;
+}  
+/* CAJAS BLANCAS CON LETRA NEGRA - VIDEOS */
+div[style*="f0e6ff"]{
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+div[style*="f0e6ff"] *{
+  color: #c97a8e !important;
+}
+
+/* MENÚ QUE TE SIGUE CUANDO BAJAS */
+header{
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 99999 !important;
+}
+
+.sidebar{
+  position: fixed !important;
+  top: 60px !important;
+  left: 0 !important;
+  height: calc(100vh - 60px) !important;
+  z-index: 99998 !important;
+  overflow-y: auto;
+  background: #1a1028 !important;
+}
+
+.layout{
+  padding-top: 70px;
+}
+/* QUITAR BARRA ROSITA/BLANCA Y QUE SE VEA LA LETRA BLANCA */
+.item:hover, 
+.cancion:hover,
+li:hover,
+.recomendado div:hover{
+  background: #2d1b4e !important; /* morado oscuro */
+  color: white !important;
+}
+
+.item:hover b,
+.item:hover span,
+.item:hover p,
+.cancion:hover b{
+  color: white !important;
+}
+
+/* Si se queda seleccionada la primera, también */
+.item:first-child,
+.activo{
+  background: #1a1028 !important;
+  color: white !important;
+}
+/* SOLO QUITAR ROSA/BLANCO DE RECOMENDADO */
+.item, .cancion, .recomendado div {
+  background: #181818 !important;
+  background-color: #181818 !important;
+}
+
+.item:hover, .cancion:hover {
+  background: #282828 !important; /* gris oscuro, se ve la letra blanca */
+  border: none !important;
+}
