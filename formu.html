@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHERLYN PREMIUM</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* Estilos del formulario (acotados a .panel para no romper el menú de style.css) */
+.panel {
+    background: #211c29;
+    width: 90%;
+    max-width: 450px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(15px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes entrarAviso {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.panel { animation: aparecer .6s ease both; }
+.panel input { transition: border-color .3s, box-shadow .3s, opacity .3s; }
+.panel input:focus { outline: none; box-shadow: 0 0 0 3px rgba(198,154,255,.3); }
+.panel button { transition: background .3s, transform .15s; }
+.panel button:active { transform: scale(.97); }
+.aviso:not(:empty) { animation: entrarAviso .25s ease; }
+.beneficios {
+    background: linear-gradient(135deg, rgba(247,215,116,.12), rgba(112,75,145,.25));
+    border: 1px solid rgba(247,215,116,.5);
+    border-radius: 10px;
+    padding: 15px 18px;
+    margin-bottom: 22px;
+}
+.beneficios h3 { margin: 0 0 10px; color: #f7d774; text-align: center; font-size: 16px; }
+.beneficios ul { list-style: none; margin: 0; padding: 0; }
+.beneficios li {
+    color: #eee;
+    padding: 5px 0;
+    font-size: 14px;
+    opacity: 0;
+    animation: entrarAviso .5s ease forwards;
+}
+.beneficios li:nth-child(1) { animation-delay: .3s; }
+.beneficios li:nth-child(2) { animation-delay: .5s; }
+.beneficios li:nth-child(3) { animation-delay: .7s; }
+.beneficios li:nth-child(4) { animation-delay: .9s; }
+.panel h1 { text-align: center; color: #c69aff; }
+.panel p { text-align: center; color: #ccc; }
+.panel .grupo { margin-bottom: 15px; }
+.panel label { display: block; margin-bottom: 7px; color: #d8c5e9; }
+.panel input {
+    width: 100%;
+    padding: 11px;
+    box-sizing: border-box;
+    background: #342d3d;
+    border: 1px solid #76558e;
+    border-radius: 6px;
+    color: white;
+}
+.panel input:disabled { opacity: .5; cursor: not-allowed; }
+.panel input.invalido { border-color: #ff6b6b; }
+.panel input.valido { border-color: #6bff9e; }
+.panel button {
+    width: 100%;
+    padding: 12px;
+    background: #704b91;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.panel button:hover { background: #9365b7; }
+.aviso { display: block; min-height: 16px; margin-top: 5px; font-size: 13px; color: #ff8a8a; }
+#resultado { text-align: center; margin-top: 15px; color: #c69aff; }
+#resultado.incorrecto { color: #ff8a8a; }
+#resultado.correcto { color: #6bff9e; }
+.panel a.volver {
+    color: #c69aff;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+<input type="checkbox" id="check-menu" hidden>
+<header>
+  <label for="check-menu" class="btn-menu">☰</label>
+  <div class="logo-header">
+    <img src="logo.jpg" alt="logo">
+    <span>SHERLYN</span>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="sidebar">
+    <h3>MENÚ</h3>
+    <ul>
+      <li><a href="index.html">✨ INICIO</a></li>
+      <li><a href="index.html">🎧 Música</a></li>
+      <li><a href="index.html">🎬 Videos</a></li>
+      <li><a href="formu.html">SUSCRIPCION</a></li>
+    </ul>
+  </nav>
+
+  <div class="contenido">
+    <div class="panel">
+
+      <h1>PREMIUM 💜</h1>
+      <p>Completa tus datos para registrarte</p>
+
+      <div class="beneficios">
+        <h3>👑 Beneficios de Premium</h3>
+        <ul>
+          <li>🚫 Música sin anuncios</li>
+          <li>🎧 Calidad de audio mejorada</li>
+          <li>🎬 Videos y canciones sin límite</li>
+          <li>💜 Acceso a todos los álbumes</li>
+        </ul>
+      </div>
+
+      <form id="registro" novalidate>
+
+        <div class="grupo">
+          <label for="nombres">Nombre(s)</label>
+          <input type="text" id="nombres" maxlength="100" placeholder="Ej. MARÍA FERNANDA" autocomplete="off">
+          <span class="aviso" id="avisoNombres"></span>
+        </div>
+
+        <div class="grupo">
+          <label for="apellidoUno">Apellido paterno</label>
+          <input type="text" id="apellidoUno" maxlength="100" placeholder="Ej. HERNÁNDEZ" autocomplete="off">
+          <span class="aviso" id="avisoPaterno"></span>
+        </div>
+
+        <div class="grupo">
+          <label for="apellidoDos">Apellido materno</label>
+          <input type="text" id="apellidoDos" maxlength="100" placeholder="Ej. GARCÍA" autocomplete="off">
+          <span class="aviso" id="avisoMaterno"></span>
+        </div>
+
+        <div class="grupo">
+          <label for="fecha">Fecha de nacimiento</label>
+          <input type="date" id="fecha">
+          <span class="aviso" id="avisoFecha"></span>
+        </div>
+
+        <div class="grupo">
+          <label for="anios">Edad</label>
+          <input type="text" inputmode="numeric" id="anios" maxlength="3" placeholder="Ej. 20" autocomplete="off">
+          <span class="aviso" id="avisoEdad"></span>
+        </div>
+
+        <div class="grupo">
+          <label for="numeroCuenta">Número de cuenta</label>
+          <input type="text" inputmode="numeric" id="numeroCuenta" maxlength="19" placeholder="0000 0000 0000 0000" autocomplete="off" disabled>
+          <span class="aviso" id="avisoNumeroCuenta"></span>
+        </div>
+
+        <div class="grupo">
+          <label for="email">Correo electrónico</label>
+          <input type="text" id="email" placeholder="correo@gmail.com" autocomplete="off">
+          <span class="aviso" id="avisoCorreo"></span>
+        </div>
+
+        <button type="submit">Comprobar información</button>
+
+        <div id="resultado"></div>
+      </form>
+
+      <a class="volver" href="index.html">Volver al inicio</a>
+    </div>
+  </div>
+</div>
+
+<script src="formulario.js"></script>
+</body>
+</html>

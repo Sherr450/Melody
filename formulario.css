@@ -1,0 +1,265 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#FFF0F5}
+header{background:#b93b8f;padding:15px 20px;display:flex;align-items:center;gap:15px;color:white;position:sticky;top:0;z-index:30}
+.sidebar{
+  background-color:#fbfbfb;
+}
+
+.btn-menu{font-size:26px;cursor:pointer;background:white;color:#f660ab;width:38px;height:38px;display:grid;place-items:center;border-radius:8px;user-select:none}
+.logo{font-size:24px;font-weight:bold;flex:1}
+.layout{display:block}
+/* BARRA ROSA DE ARRIBA IGUAL QUE INDEX */
+.logo-header {
+  background: #d6249e;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 15px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.logo-header img {
+  width: 60px;
+  height: 60px;
+  background: white;
+}
+
+.logo-header span {
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 1px;
+    color: black;
+}
+
+.btn-menu {
+  background: white;
+  color: #fbfbfb;
+  font-size: 22px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* MENÚ LATERAL IGUAL QUE INDEX */
+.layout {
+  display: flex;
+}
+
+.sidebar {
+  width: 230px;
+  min-height: 100vh;
+  background: #fbfbfb;
+  color: white;
+  padding: 15px;
+}
+
+.sidebar h3 {
+  margin-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li a {
+  display: block;
+  background: white;
+  color: black;
+  text-decoration: #fbfbfb;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.btn-premium {
+  display: inline-block;
+  background: #7044b1;
+  color: white;
+  text-decoration: none;
+  padding: 13px 25px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* PARA QUE EL FORMULARIO QUEDE A LA DERECHA */
+.panel {
+  flex: 1;
+}
+#check-menu:checked ~ header + .layout .sidebar{
+  max-height:300px;
+  opacity:1;
+  padding:15px;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+
+
+.panel {
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0,0,0,.2);
+}
+
+
+
+
+h1 {
+    color: #fbfbfb;
+    font-size: 25px;
+}
+
+header p {
+    color: #fbfbfb;
+    font-size: 14px;
+}
+
+.grupo {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    color: #444;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: .3s;
+}
+
+input:focus {
+    border-color: #7b2ff7;
+    outline: none;
+    box-shadow: 0 0 5px rgba(123,47,247,.3);
+}
+
+input.valido {
+    border: 2px solid #21a366;
+}
+
+input.invalido {
+    border: 2px solid #e53935;
+}
+
+span {
+    display: block;
+    color: #e53935;
+    font-size: 12px;
+    min-height: 16px;
+    margin-top: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #7028d9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #5015a9;
+}
+
+#resultado {
+    text-align: center;
+    margin-top: 18px;
+    font-weight: bold;
+}
+
+.correcto {
+    color: #168443;
+}
+
+.incorrecto {
+    color: #d32f2f;
+}
+
+@media (max-width: 480px) {
+    .panel {
+        padding: 22px;
+    }
+
+    h1 {
+        font-size: 21px;
+    }
+}
+header{background:#121212;padding:15px 20px;display:flex;align-items:center;gap:15px;color:white;position:sticky;top:0;z-index:30}
+.btn-menu{font-size:26px;cursor:pointer;background:white;color:#f78fb6;width:38px;height:38px;display:grid;place-items:center;border-radius:8px;user-select:none}
+.layout {
+    display: flex;
+}
+
+.sidebar {
+    width: 180px;
+    flex-shrink: 0;
+    background: #5b2ee5;
+    padding: 10px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+#check-menu:checked ~ header + .layout .sidebar {
+    max-height: 300px;
+    opacity: 1;
+}
+
+.sidebar h3 {
+    font-size: 16px;
+}
+
+.sidebar ul {
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 5px 0;
+}
+
+.sidebar a {
+    font-size: 13px;
+    padding: 6px;
+    display: block;
+}
+
+.titulo-form {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #000;
+  color: white;
+}
